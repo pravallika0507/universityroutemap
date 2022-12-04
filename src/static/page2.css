@@ -1,0 +1,36 @@
+.head1{
+    text-align: center;
+    color: black;
+}
+.head2{
+    text-align: center;
+    text-decoration: underline;
+    padding: 10px;
+    color: black;
+}
+.images{
+    text-align: center;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    text-align: center;
+  }
+.row {
+    display: flex;
+  }
+  
+.column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+.dropDown{
+    display: flex;
+}
+.dropDown div{
+    text-align-last: center;
+}
+.dropDown label{
+    text-decoration: underline;
+}

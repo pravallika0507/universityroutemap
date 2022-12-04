@@ -1,0 +1,22 @@
+.head1{
+    text-align: center;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  text-align: center;
+}
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+.video_text{
+  text-decoration: underline;
+  text-align: center;
+}

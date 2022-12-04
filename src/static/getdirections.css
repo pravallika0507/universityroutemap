@@ -1,0 +1,41 @@
+.head1{
+    text-align: center;
+    color: black;
+    padding-bottom: 35px;
+}
+.head2{
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+    width: 75%;
+    padding-left: 131px;
+    padding-bottom: 25px;
+}
+.dropDown{
+    display: flex;
+}
+.dropDown div{
+    text-align-last: center;
+}
+.start{
+    padding-bottom: 25px;
+    text-align: center;
+}
+.end{
+    padding-bottom: 25px;
+    text-align: center;
+}
+.button1{
+    position: relative;
+    text-align: center;
+}
+.btn-1{
+    padding: 10px;
+    border-color: black !important;
+    text-align: center;
+    font-family: roboto;
+    width: 25%;
+    background-color: white;
+    border-radius: 10px;
+    border-color: white;
+}
