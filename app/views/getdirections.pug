@@ -1,0 +1,32 @@
+doctype html
+head
+  title UNIVERSITY ROUTEMAP
+  link(rel='stylesheet' href='./')
+div
+  img(src='./UORLogo.png' style='width: 200px;height: 100px;')
+h1.head1 UNIVERSITY ROUTE MAP
+.dropDown
+  span.head2  Know Your Directions
+  div
+    label(for='choosePage') Choose A Page: 
+    select#choosePage(name='choosePage')
+      option(value='homePage') Home Page
+      option(value='intakePage') Intake Page
+      option(value='coursePage') Course Page
+      option(value='subjectPage') Subject Page
+      option(value='classDetailsPage') Class Details Page
+      option(value='getDirectionsPage') Get Directions Page
+.start
+  label(for='startingPoint') Choose Starting Point: 
+  input#startingPoint(type='text' name='startingPoint' placeholder='Choose Your Starting Point')
+  br
+.end
+  label(for='destination') Choose Destination: 
+  input#destination(type='text' name='destination' placeholder='Choose Your Destination')
+  br
+.button1
+  button.btn-1 Enter
+
+
+
+    
