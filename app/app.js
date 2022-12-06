@@ -2,38 +2,39 @@
 const express = require("express");
 
 // Create express app
-var app = express();
+const app = express();
 
+var path = require('path');
 // Add static files location
 app.use(express.static("static"));
 
 // adding pug 
 app.set('view engine', 'pug');
 app.set('views', './app/views');
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Get the functions in the db.js file to use
 const db = require('./services/db');
 
 // Create a route for root - /
+
 app.get("/", function(req, res) {
     res.render("home");
+    // output = <a href='./intake/'>Know Your Class Details</a>
+    // res.render("home", output)
 });
 
-app.get("/1", function(req, res) {
-    res.render("page2");
+app.get("/intake", function(req,res) {
+    res.render("intake")
 });
 
-app.get("/2", function(req, res) {
-    res.render("timetable");
-});
-
-app.get("/3", function(req, res) {
+app.get("/getdirections", function(req, res) {
     res.render("getdirections");
 });
 
 // Create a route for testing the db
-app.get("/4", function(req, res) {
+app.get("/1", function(req, res) {
     // Assumes a table called test_table exists in your database
     sql = 'select * from subjects ';
    

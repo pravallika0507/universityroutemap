@@ -1,7 +1,10 @@
+.logo{
+  width: 200px;
+  height: 100px;
+}
 .head1{
     text-align: center;
 }
-
 .column {
   float: left;
   width: 33.33%;
@@ -19,4 +22,5 @@
 .video_text{
   text-decoration: underline;
   text-align: center;
+  color: black;
 }

@@ -1,0 +1,51 @@
+doctype html
+head
+  title UNIVERSITY ROUTEMAP
+  style 
+    include intake.css
+div
+  img(src='./images/UORLogo.png' style='width: 200px;height: 100px;')
+h1.head1 UNIVERSITY ROUTE MAP
+.dropDown
+  span.head2  CHOOSE YOUR INTAKE
+  div
+    label(for='choosePage') Choose A Page: 
+    select#choosePage(name='choosePage')
+      option(value='homePage') Home Page
+      option(value='intakePage') Intake Page
+      option(value='coursePage') Course Page
+      option(value='subjectPage') Subject Page
+      option(value='classDetailsPage') Class Details Page
+      option(value='getDirectionsPage') Get Directions Page
+.images
+  .row
+    .column
+      img(src='./images/january.jpg' style='width: 400px; height: 300px;')
+      .dropDown
+        .january
+          label(for='chooseIntake') Choose your intake year: 
+          select#choosePage(name='choosePage')
+            option(value='2020') 2020
+            option(value='2021') 2021
+            option(value='2022') 2022
+            option(value='2023') 2023
+    .column
+      img(src='./images/april.png' style='width: 400px; height: 300px;')
+      .dropDown
+        .april
+          label(for='chooseIntake') Choose your intake year: 
+          select#choosePage(name='choosePage')
+            option(value='2020') 2020
+            option(value='2021') 2021
+            option(value='2022') 2022
+            option(value='2023') 2023
+    .column
+      img(src='./images/september.jpg' style='width: 400px; height: 300px;')
+      .dropDown
+        .september
+          label(for='chooseIntake') Choose your intake year: 
+          select#choosePage(name='choosePage')
+            option(value='2020') 2020
+            option(value='2021') 2021
+            option(value='2022') 2022
+            option(value='2023') 2023
