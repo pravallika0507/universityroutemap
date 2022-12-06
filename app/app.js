@@ -17,11 +17,23 @@ const db = require('./services/db');
 
 // Create a route for root - /
 app.get("/", function(req, res) {
+    res.render("home");
+});
+
+app.get("/1", function(req, res) {
+    res.render("page2");
+});
+
+app.get("/2", function(req, res) {
+    res.render("timetable");
+});
+
+app.get("/3", function(req, res) {
     res.render("getdirections");
 });
 
 // Create a route for testing the db
-app.get("/1", function(req, res) {
+app.get("/4", function(req, res) {
     // Assumes a table called test_table exists in your database
     sql = 'select * from subjects ';
    

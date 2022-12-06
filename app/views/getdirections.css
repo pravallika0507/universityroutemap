@@ -2,34 +2,34 @@
      text-align: center;
      color: black;
      padding-bottom: 35px;
-     }
-     .head2{
+ }
+ .head2{
      text-align: center;
      text-decoration: underline;
      color: black;
      width: 75%;
      padding-left: 131px;
      padding-bottom: 25px;
-     }
-     .dropDown{
+ }
+ .dropDown{
      display: flex;
-     }
-     .dropDown div{
+ }
+ .dropDown div{
      text-align-last: center;
-     }
-     .start{
+ }
+ .start{
      padding-bottom: 25px;
      text-align: center;
-     }
-     .end{
+ }
+ .end{
      padding-bottom: 25px;
      text-align: center;
-     }
-     .button1{
+ }
+ .button1{
      position: relative;
      text-align: center;
-     }
-     .btn-1{
+ }
+ .btn-1{
      padding: 10px;
      border-color: black !important;
      text-align: center;
@@ -38,5 +38,4 @@
      background-color: white;
      border-radius: 10px;
      border-color: white;
-     }
-    
+ }
