@@ -34,8 +34,6 @@ const db = require('./services/db');
 
 app.get("/", function(req, res) {
     res.render("home");
-    // output = <a href='./intake/'>Know Your Class Details</a>
-    // res.render("home", output)
 });
 
 
@@ -44,6 +42,10 @@ app.get("/intake", function(req,res) {
     db.query(sql).then(resul =>{
         res.render("intake", {resul})
     })
+});
+
+app.get("/courseDetails", function(req, res) {
+    res.render("courseDetails");
 });
 
 app.get("/getdirections", function(req, res) {

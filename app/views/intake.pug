@@ -24,23 +24,23 @@ h1.head1 UNIVERSITY ROUTE MAP
       .dropDown
         .january
           label(for='chooseIntake') Choose your intake year: 
-          select#choosePage(name='choosePage')
+          select#choosePage(name='choosePage'  onchange='location = this.value;')
             each row in resul
-              option(value='year') #{row.YEAR}
+              option(value='./courseDetails') #{row.YEAR}
     .column
       img(src='./images/april.png' style='width: 400px; height: 300px;')
       .dropDown
         .april
           label(for='chooseIntake') Choose your intake year: 
-          select#choosePage(name='choosePage')
+          select#choosePage(name='choosePage'  onchange='location = this.value;')
             each row in resul
-              option(value='year') #{row.YEAR}
+              option(value='./courseDetails') #{row.YEAR}
     .column
       img(src='./images/september.jpg' style='width: 400px; height: 300px;')
       .dropDown
         .september
           label(for='chooseIntake') Choose your intake year: 
-          select#choosePage(name='choosePage')
+          select#choosePage(name='choosePage'  onchange='location = this.value;')
             each row in resul
-              option(value='year') #{row.YEAR}
+              option(value='./courseDetails') #{row.YEAR}
             
