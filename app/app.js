@@ -45,9 +45,9 @@ app.get("/intake", function(req,res) {
 });
 
 app.get("/courseDetails", function(req, res) {
-    sql = "SELECT * FROM COURSE_DETAILS";
+    sql = "SELECT * FROM COURSES";
     db.query(sql).then(resul =>{
-        res.render("intake", {resul})
+        res.render("courseDetails", {resul})
     })
 
 });
