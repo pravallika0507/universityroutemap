@@ -4,6 +4,19 @@ const express = require("express");
 // Create express app
 const app = express();
 
+const mysql = require('mysql');
+const connection=mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'node_crud'
+})
+
+connection.connect(function(error){
+    if(!!error) console.log('error');
+    else console.log('Database Connected!! ')
+})
+
 var path = require('path');
 // Add static files location
 app.use(express.static("static"));
@@ -25,8 +38,12 @@ app.get("/", function(req, res) {
     // res.render("home", output)
 });
 
+
 app.get("/intake", function(req,res) {
-    res.render("intake")
+    sql = "SELECT * FROM INTAKE";
+    db.query(sql).then(resul =>{
+        res.render("intake", {resul})
+    })
 });
 
 app.get("/getdirections", function(req, res) {
@@ -36,7 +53,7 @@ app.get("/getdirections", function(req, res) {
 // Create a route for testing the db
 app.get("/1", function(req, res) {
     // Assumes a table called test_table exists in your database
-    sql = 'select * from subjects ';
+    sql = 'select * from INTAKE ';
    
     db.query(sql).then(results => {
         console.log(results);
