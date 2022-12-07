@@ -13,8 +13,8 @@ const connection=mysql.createConnection({
 })
 
 connection.connect(function(error){
-    if(!!error) console.log('error');
-    else console.log('Database Connected!! ')
+    if(!!error) console.log('Database Connected!!');
+    else console.log('error ')
 })
 
 var path = require('path');
@@ -38,14 +38,18 @@ app.get("/", function(req, res) {
 
 
 app.get("/intake", function(req,res) {
-    sql = "SELECT * FROM INTAKE";
+    sql = "SELECT * FROM INTAKE ";
     db.query(sql).then(resul =>{
         res.render("intake", {resul})
     })
 });
 
 app.get("/courseDetails", function(req, res) {
-    res.render("courseDetails");
+    sql = "SELECT * FROM COURSE_DETAILS";
+    db.query(sql).then(resul =>{
+        res.render("intake", {resul})
+    })
+
 });
 
 app.get("/getdirections", function(req, res) {
