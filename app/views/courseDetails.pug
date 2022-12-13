@@ -1,21 +1,33 @@
 doctype html
-head  
+head
+  title UNIVERSITY ROUTEMAP
+  style 
+    include courseDetails.css
+div
+  img(src='./images/UORLogo.png' style='width: 200px;height: 100px;')
 h1.head1 UNIVERSITY ROUTE MAP
-h4.head2 SELECT YOUR COURSE
+.dropDown
+  span.head2  SELECT YOUR COURSE
+  div
+    label(for='choosePage') Choose A Page: 
+    select#choosePage(name='choosePage' onchange='location = this.value;')
+      option(value='') Redirect To
+      option(value='./') Home Page
+      option(value='./intake') Intake Page
+      option(value='./courseDetails') Course Page
+      option(value='subjectPage') Subject Page
+      option(value='classDetailsPage') Class Details Page
+      option(value='./getDirections') Get Directions Page
 .row
   .column
     a(href='https://www.roehampton.ac.uk/postgraduate-courses/computing/#:~:text=The%20course%20focuses%20on%20core,data%20solutions%20and%20secure%20systems.' target='_blank')
-      img(src='https://www.londonmet.ac.uk/media/london-metropolitan-university/london-met-photos/professional-service-departments-photos/engagement/pr-and-communications/news-images/2022/june/compsci.jpg' style='width:25%')
+      img(src='./images/MScComputing.webp' style='width: 400px; height: 300px;')
     p.p M.SC COMPUTING
-  .column2
+  .column
     a(href='https://www.roehampton.ac.uk/postgraduate-courses/global-financial-management/' target='_blank')
-      img(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfw35LMqj0Npay95KzTV5c5YN6aROYm7TtKA&usqp=CAU.jpg' style='width:25%')
+      img(src='./images/GlobalFinance.jpeg' style='width: 400px; height: 300px;')
     p.p M. SC GLOBAL FINANCE
-  .column3
-    a(href='https://www.roehampton.ac.uk/postgraduate-courses/mba/' target='_blank')
-      img(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiGyzr-SeRezxs55xUJo9LZZxi2ESHmbNhSA&usqp=CAU' style='width:25%')
-    p.p MBA
-  .column4
+  .column
     a(href='https://www.roehampton.ac.uk/postgraduate-courses/data-science/' target='_blank')
-      img(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQh9qPZufWu6Po8BFI3hwwhKtyES6YP46Qln6A2WVzCUoqXaUCQhCy_vylCKwYwTdocRM&usqp=CAU' style='width:25%')
+      img(src='./images/DataScience.jpeg' style='width: 400px; height: 300px;')
     p.p DATA SCIENCE

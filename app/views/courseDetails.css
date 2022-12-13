@@ -4,44 +4,32 @@
     text-align: center;
 }
 
-.head2 {
+.head2{
     text-align: center;
-    font-family: Times New Roman;
     text-decoration: underline;
+    color: black;
+    width: 75%;
+    padding-left: 110px;
+    padding-bottom: 25px;
 }
 
 .column {
-    border: 3px solid #fff;
     float: left;
-    width: 20vw;
-    height: 25%;
-}
-
-.column2 {
-    float:inline-start;
-    border: 3px solid #fff;
-
-    width: 20vw;
-    height: 25%;
-}
-
-.column3 {
-    border: 3px solid #fff;
-
-    float: right;
-    width: 20vw;
-    height: 25%;
-}
-
-.column4 {
-    border: 3px solid #fff;
-
-    float: left;
-    width: 20vw;
-    height: 25%;
-}
+    width: 33.33%;
+    padding: 5px;
+    text-align: center;
+  }
+.row {
+    display: flex;
+  }
 
 .p {
     text-align: center;
     font-family: Roboto;
+}
+.dropDown{
+    display: flex;
+}
+.dropDown div{
+    text-align-last: center;
 }
