@@ -7,7 +7,7 @@ div
   img(src='./images/UORLogo.png' style='width: 200px;height: 100px;')
 h1.head1 UNIVERSITY ROUTE MAP
 .dropDown
-  span.head2  SELECT YOUR COURSE
+  span.head2  SELECT YOUR SUBJECT
   div
     label(for='choosePage') Choose A Page: 
     select#choosePage(name='choosePage' onchange='location = this.value;')
@@ -23,15 +23,13 @@ h1.head1 UNIVERSITY ROUTE MAP
   each row in resul
     img(src='./images/MScComputing.webp' style='width: 500px; height: 450px;')
     br
-    a.video_text(href="/courseDetails/ + #{subDetails} + ") #{row.C_NAME} 
-        //- include courseDetails.js
-  //- .column
-  //- each row in resul
-  //-   img(src='./images/GlobalFinance.jpeg' style='width: 500px; height: 450px;')
-  //-   br
-  //-   a.video_text(href='/Intake')  #{row.C_NAME}
-  //- .column
-  //- each row in resul
-  //-   img(src='./images/DataScience.jpeg' style='width: 500px; height: 450px;')
-  //-   br
-  //-   a.video_text(href='/Intake')  #{row.C_NAME}
+    a.video_text(href='/classDetails') #{row.SUB_NAME} 
+    
+  .column
+    img(src='./images/GlobalFinance.jpeg' style='width: 500px; height: 450px;')
+    br
+    a.video_text(href='/Intake')  GLOBAL FINANCE
+  .column
+    img(src='./images/DataScience.jpeg' style='width: 500px; height: 450px;')
+    br
+    a.video_text(href='/Intake')  DATA SCIENCE

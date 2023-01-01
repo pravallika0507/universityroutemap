@@ -47,10 +47,28 @@ app.get("/intake", function(req,res) {
 app.get("/courseDetails", function(req, res) {
     sql = "SELECT * FROM COURSES";
     db.query(sql).then(resul =>{
+        console.log(resul);
         res.render("courseDetails", {resul})
     })
-
 });
+
+app.get("/courseDetails/:C_ID", function(req, res) {
+    var subDetails = req.params.C_ID;
+    sql = "SELECT * FROM SUBJECTS";
+    db.query(sql).then(resul =>{
+    console.log(resul);
+    // res.send(subDetails)
+    res.render("subjectDetails", {resul})
+    })
+});
+
+// app.get("/subjectDetails", function(req, res) {
+//     sql = "SELECT * FROM COURSES";
+//     db.query(sql).then(resul =>{
+//         console.log(resul);
+//         res.render("subjectDetails", {resul})
+//     })
+// });
 
 app.get("/getdirections", function(req, res) {
     res.render("getdirections");
