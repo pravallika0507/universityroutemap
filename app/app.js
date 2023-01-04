@@ -44,22 +44,58 @@ app.get("/intake", function(req,res) {
     })
 });
 
+// app.get("/courseDetails", function(req, res) {
+//     sql = "SELECT * FROM COURSES";
+//     db.query(sql).then(resul =>{
+//         console.log(resul);
+//         res.render("courseDetails", {resul})
+//     })
+// });
+
 app.get("/courseDetails", function(req, res) {
     sql = "SELECT * FROM COURSES";
-    db.query(sql).then(resul =>{
-        console.log(resul);
-        res.render("courseDetails", {resul})
+    var output = ''
+    db.query(sql).then(resul => {
+        for(var row of resul) {
+            output += 'Course: ' + '<a href="./courseDetails/'+row.C_ID + '">' + row.C_NAME + '<br />' + '</a>'
+        }
+        res.send(output);
+        //res.render("courseDetails", {resul});
     })
-});
+})
 
 app.get("/courseDetails/:C_ID", function(req, res) {
-    var subDetails = req.params.C_ID;
-    sql = "SELECT * FROM SUBJECTS";
-    db.query(sql).then(resul =>{
-    console.log(resul);
-    // res.send(subDetails)
-    res.render("subjectDetails", {resul})
-    })
+    var CID = req.params.C_ID;
+    var sdsql = "SELECT * FROM SUBJECTS WHERE C_ID = ?";
+    db.query(sdsql, [CID]).then(results =>{
+    console.log(results);
+    output = ''
+        for(var row of results){
+            //res.send(CID);
+            var cid = row.C_ID;
+            //output += <br/>
+            //output += 'Subjects: ' + row.SUB_NAME;
+            output += 'Subject: ' + '<a href="./'+cid+"/"+row.SUB_ID + '">' + row.SUB_NAME  + '</br>' + '</a>'
+        }
+    res.send(output);
+    //res.render("subjectDetails", {resul})
+    });
+});
+
+app.get("/courseDetails/:C_ID/:SUB_ID", function(req, res) {
+    var SID = req.params.SUB_ID;
+    var cdsql = "SELECT * FROM CLASS_DETAILS WHERE SUB_ID = ?";
+    db.query(cdsql, [SID]).then(result => {
+        console.log(result);
+        output = ''
+            for(var row of result){
+                output += 'Room Number: ' + row.ROOM_NO + '<br />'
+                output += 'Date: ' + row.DATE + '<br />'
+                output += 'Time: ' + row.TIME + '<br />'
+                output += 'Tutor: ' + row.TUTOR
+            }
+    res.send(output);
+    });
 });
 
 // app.get("/subjectDetails", function(req, res) {
