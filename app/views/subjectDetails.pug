@@ -20,16 +20,16 @@ h1.head1 UNIVERSITY ROUTE MAP
       option(value='./getDirections') Get Directions Page
 .row
   .column
-  each row in resul
+  for item in data
     img(src='./images/MScComputing.webp' style='width: 500px; height: 450px;')
     br
-    a.video_text(href='/classDetails') #{row.SUB_NAME} 
+    a.video_text(href='./' + item.C_ID + '/' + item.SUB_ID) #{item.SUB_NAME} 
     
-  .column
-    img(src='./images/GlobalFinance.jpeg' style='width: 500px; height: 450px;')
-    br
-    a.video_text(href='/Intake')  GLOBAL FINANCE
-  .column
-    img(src='./images/DataScience.jpeg' style='width: 500px; height: 450px;')
-    br
-    a.video_text(href='/Intake')  DATA SCIENCE
+  //- .column
+  //-   img(src='./images/GlobalFinance.jpeg' style='width: 500px; height: 450px;')
+  //-   br
+  //-   a.video_text(href='/Intake')  GLOBAL FINANCE
+  //- .column
+  //-   img(src='./images/DataScience.jpeg' style='width: 500px; height: 450px;')
+  //-   br
+  //-   a.video_text(href='/Intake')  DATA SCIENCE

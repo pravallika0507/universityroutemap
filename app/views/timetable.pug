@@ -1,79 +1,28 @@
 doctype html
 head
   title UNIVERSITY ROUTEMAP
-  link(rel='stylesheet' href='timetable.css')
+  style 
+    include timetable.css
 div
-  img(src='./UORLogo.png' style='width: 200px;height: 100px;')
+  img(src='./images/UORLogo.png' style='width: 200px;height: 100px;')
 h1.head1 UNIVERSITY ROUTE MAP
-h3.head2 SOFTWARE DEVELOPMENT-1
-h4.head3 Module Tutors:
-p.para1 Dr. Arturo Araujo ( arturo.araujo@roehampton.ac.uk )
-p.para1 Dr. Yuanlin Gu (yuanlin.gu@roehampton.ac.uk )
-p.para2
-  | Module Convenor: 
-  span.para3 Lisa Haskel
-.timeTable
-  table
-    tr
-      th 1A
-      th 2A
-      th 4A
-      th 5A
-      th 6A
-    tr
-      td 26/09/2022
-      td 03/10/2022
-      td 17/10/2022
-      td 24/10/2022
-      td 31/10/2022
-    tr
-      td
-        | CMP020L004A/LAB/01 
-        br
-        |     Software Development 2 
-        br
-        |     DB.210
-        br
-        |     10.00 AM - 2.00PM
-        br
-        |     Arturo, Araujo
-      td
-        | CMP020L004A/LAB/01 
-        br
-        |     Software Development 2 
-        br
-        |     DB.210
-        br
-        |     10.00 AM - 2.00PM
-        br
-        |     Arturo, Araujo
-      td
-        | CMP020L004A/LAB/01 
-        br
-        |     Software Development 2 
-        br
-        |     DB.210
-        br
-        |     10.00 AM - 2.00PM
-        br
-        |     Arturo, Araujo
-      td
-        | CMP020L004A/LAB/01 
-        br
-        |     Software Development 2 
-        br
-        |     DB.210
-        br
-        |     10.00 AM - 2.00PM
-        br
-        |     Arturo, Araujo
-      td
-        | CMP020L004A/LAB/01 
-        br
-        |         Software Development 2 
-        br
-        |         DB.210
-        br
-        |         10.00 AM - 2.00PM
-        br
-        |         Arturo, Araujo
+h3.head2 Class Details:
+div.displayTable
+  for item in data
+    //- h3.head2 #{item.SUB_NAME}
+    //- h4.head3 Module Tutor:
+    //- p.para1 #{item.TUTOR}
+    div.timeTable 
+    table
+      tr
+        td
+          |     DATE: #{item.SUB_DATE}
+          br
+          |     SUBJECT: #{item.SUB_NAME} 
+          br
+          |     ROOM NO: #{item.ROOM_NO}
+          br
+          |     TIME: #{item.TIME}
+          br
+          |     TUTOR: #{item.TUTOR}
+          

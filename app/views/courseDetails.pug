@@ -20,10 +20,10 @@ h1.head1 UNIVERSITY ROUTE MAP
       option(value='./getDirections') Get Directions Page
 .row
   .column
-  each row in resul
+  for item in data
     img(src='./images/MScComputing.webp' style='width: 500px; height: 450px;')
     br
-    a.video_text(href="/courseDetails/ + #{subDetails} + ") #{row.C_NAME} 
+    a.video_text(href='/courseDetails/' + item.C_ID) #{item.C_NAME} 
         //- include courseDetails.js
   //- .column
   //- each row in resul

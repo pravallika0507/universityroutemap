@@ -18,8 +18,15 @@
 }
 .timeTable{
     text-align: -webkit-center;
+    /* border: 1px solid; */
 }
 table, th, td {
   border:1px solid black;
   text-align: center;
+}
+
+.displayTable{
+    /* border: 1px solid; */
+    display: -webkit-inline-box;
+    padding: 10px
 }

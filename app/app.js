@@ -44,57 +44,61 @@ app.get("/intake", function(req,res) {
     })
 });
 
-// app.get("/courseDetails", function(req, res) {
-//     sql = "SELECT * FROM COURSES";
-//     db.query(sql).then(resul =>{
-//         console.log(resul);
-//         res.render("courseDetails", {resul})
-//     })
-// });
-
 app.get("/courseDetails", function(req, res) {
     sql = "SELECT * FROM COURSES";
-    var output = ''
-    db.query(sql).then(resul => {
-        for(var row of resul) {
-            output += 'Course: ' + '<a href="./courseDetails/'+row.C_ID + '">' + row.C_NAME + '<br />' + '</a>'
-        }
-        res.send(output);
-        //res.render("courseDetails", {resul});
+    db.query(sql).then(resul =>{
+        console.log(resul);
+        res.render("courseDetails", {data: resul})
     })
-})
+});
+
+// app.get("/courseDetails", function(req, res) {
+//     sql = "SELECT * FROM COURSES";
+//     var output = ''
+//     db.query(sql).then(resul => {
+//         for(var row of resul) {
+//             output += 'Course: ' + '<a href="./courseDetails/'+row.C_ID + '">' + row.C_NAME + '<br />' + '</a>'
+//         }
+//         res.send(output);
+//         // res.render("courseDetails", {resul});
+//     })
+// })
 
 app.get("/courseDetails/:C_ID", function(req, res) {
     var CID = req.params.C_ID;
     var sdsql = "SELECT * FROM SUBJECTS WHERE C_ID = ?";
     db.query(sdsql, [CID]).then(results =>{
     console.log(results);
-    output = ''
-        for(var row of results){
-            //res.send(CID);
-            var cid = row.C_ID;
-            //output += <br/>
-            //output += 'Subjects: ' + row.SUB_NAME;
-            output += 'Subject: ' + '<a href="./'+cid+"/"+row.SUB_ID + '">' + row.SUB_NAME  + '</br>' + '</a>'
-        }
-    res.send(output);
-    //res.render("subjectDetails", {resul})
+    // output = ''
+    //     for(var row of results){
+    //         //res.send(CID);
+    //         var cid = row.C_ID;
+    //         //output += <br/>
+    //         //output += 'Subjects: ' + row.SUB_NAME;
+    //         output += 'Subject: ' + '<a href="./'+cid+"/"+row.SUB_ID + '">' + row.SUB_NAME  + '</br>' + '</a>'
+    //     }
+    //res.send(output);
+    res.render("subjectDetails", {data: results})
     });
 });
 
 app.get("/courseDetails/:C_ID/:SUB_ID", function(req, res) {
     var SID = req.params.SUB_ID;
-    var cdsql = "SELECT * FROM CLASS_DETAILS WHERE SUB_ID = ?";
+    var cdsql = "SELECT CD.SUB_ID, DATE_FORMAT(CD.SUB_DATE, '%y-%m-%d') AS SUB_DATE, CD.TIME, CD.ROOM_NO, CD.TUTOR, SD.C_ID, SD.SUB_NAME from CLASS_DETAILS AS CD \
+    JOIN SUBJECTS AS SD on CD.SUB_ID = SD.SUB_ID \
+    WHERE CD.SUB_ID = ?";
+    //var cdsql = "SELECT * FROM CLASS_DETAILS WHERE SUB_ID = ?";
     db.query(cdsql, [SID]).then(result => {
         console.log(result);
-        output = ''
-            for(var row of result){
-                output += 'Room Number: ' + row.ROOM_NO + '<br />'
-                output += 'Date: ' + row.DATE + '<br />'
-                output += 'Time: ' + row.TIME + '<br />'
-                output += 'Tutor: ' + row.TUTOR
-            }
-    res.send(output);
+    //     output = ''
+    //         for(var row of result){
+    //             output += 'Room Number: ' + row.ROOM_NO + '<br />'
+    //             output += 'Date: ' + row.SUB_DATE + '<br />'
+    //             output += 'Time: ' + row.TIME + '<br />'
+    //             output += 'Tutor: ' + row.TUTOR
+    //         }
+    // res.send(output);
+    res.render("timetable", {data: result})
     });
 });
 
