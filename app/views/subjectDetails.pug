@@ -2,7 +2,7 @@ doctype html
 head
   title UNIVERSITY ROUTEMAP
   style 
-    include courseDetails.css
+    include subjectDetails.css
 div
   img(src='./images/UORLogo.png' style='width: 200px;height: 100px;')
 h1.head1 UNIVERSITY ROUTE MAP
@@ -19,9 +19,11 @@ h1.head1 UNIVERSITY ROUTE MAP
       option(value='classDetailsPage') Class Details Page
       option(value='./getDirections') Get Directions Page
 .row
+div
   .column
+  div
   for item in data
-    img(src='./images/MScComputing.webp' style='width: 500px; height: 450px;')
+    //- img(src='./images/MScComputing.webp' style='width: 500px; height: 450px;')
     br
     a.video_text(href='./' + item.C_ID + '/' + item.SUB_ID) #{item.SUB_NAME} 
     
