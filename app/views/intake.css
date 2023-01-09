@@ -5,11 +5,11 @@
 .head2{
     text-align: center;
     text-decoration: underline;
-    padding: 10px;
     color: black;
-    width: 75%;
-    padding-left: 110px;
-    padding-bottom: 25px;
+    width: 100%;
+    padding-left: 350px;
+    padding-bottom: 150px;
+    font-size: xx-large;
 }
 .images{
     text-align: center;
@@ -17,8 +17,9 @@
 .column {
     float: left;
     width: 33.33%;
-    padding: 5px;
+    padding-left: 35px;
     text-align: center;
+    font-size:x-large;
   }
 .row {
     display: flex;
@@ -29,11 +30,17 @@
     padding: 5px;
   }
 .dropDown{
+    
     display: flex;
+    font-size: x-large;
+
+
 }
 .dropDown div{
     text-align-last: center;
+    padding-left: 200px;
 }
 .dropDown label{
     text-decoration: underline;
+
 }

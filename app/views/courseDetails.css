@@ -8,9 +8,10 @@
     text-align: center;
     text-decoration: underline;
     color: black;
-    width: 75%;
-    padding-left: 110px;
-    padding-bottom: 25px;
+    width: 100%;
+    padding-left: 200px;
+    padding-bottom: 150px;
+    font-size: xxx-large;
 }
 
 .column {
@@ -29,12 +30,17 @@
 }
 .dropDown{
     display: flex;
+    font-size: x-large;
 }
 .dropDown div{
     text-align-last: center;
+    font-size: x-large;
 }
 .video_text{
     text-decoration: underline;
     text-align: center;
     color: black;
+    padding-left:985px;
+    padding-bottom: 1000px;
+    font-size:x-large;
   }
