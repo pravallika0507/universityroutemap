@@ -4,10 +4,12 @@
 .head2{
     text-align: center;
     text-decoration: underline;
+    font-size: x-large;
 }
 .head3{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
+    font-size: x-large;
 }
 .para1{
     text-align: center;
@@ -20,13 +22,24 @@
     text-align: -webkit-center;
     /* border: 1px solid; */
 }
-table, th, td {
+.table, th, td {
   border:1px solid black;
   text-align: center;
+  font-size: larger;
+  
 }
+
 
 .displayTable{
     /* border: 1px solid; */
     display: -webkit-inline-box;
-    padding: 10px
+    padding-left: 300px;
 }
+.dropDown div{
+    text-align-last: center;
+}
+.dropDown{
+    display: flex;
+    font-size: x-large;
+}
+

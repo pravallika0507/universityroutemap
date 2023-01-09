@@ -6,6 +6,20 @@ head
 div
   img(src='./images/UORLogo.png' style='width: 200px;height: 100px;')
 h1.head1 UNIVERSITY ROUTE MAP
+.dropDown
+  span.head2  SELECT YOUR COURSE
+  div
+    label(for='choosePage') Choose A Page: 
+    select#choosePage(name='choosePage' onchange='location = this.value;')
+      option(value='') Redirect To
+      option(value='./') Home Page
+      option(value='./intake') Intake Page
+      option(value='./courseDetails') Course Page
+      option(value='subjectPage') Subject Page
+      option(value='classDetailsPage') Class Details Page
+      option(value='./getDirections') Get Directions Page
+
+
 h3.head2 Class Details:
 div.displayTable
   for item in data
