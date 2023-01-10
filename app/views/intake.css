@@ -30,17 +30,10 @@
     padding: 5px;
   }
 .dropDown{
-    
     display: flex;
-    font-size: x-large;
-
-
+    font-size: large;
 }
 .dropDown div{
     text-align-last: center;
     padding-left: 200px;
-}
-.dropDown label{
-    text-decoration: underline;
-
 }
