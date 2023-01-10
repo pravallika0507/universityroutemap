@@ -4,25 +4,32 @@ head
   style 
     include timetable.css
 div
-  img(src='./images/UORLogo.png' style='width: 200px;height: 100px;')
+  img(src='../../images/UORLogo.png' style='width: 200px;height: 100px;')
 h1.head1 UNIVERSITY ROUTE MAP
-h3.head2 Class Details:
+.dropDown
+  span.head2  SELECT YOUR SUBJECT
+  div
+    label(for='choosePage') Choose A Page: 
+    select#choosePage(name='choosePage' onchange='location = this.value;')
+      option(value='') Redirect To
+      option(value='/') Home Page
+      option(value='/intake') Intake Page
+      option(value='/courseDetails') Course Page
+      option(value='/getDirections') Get Directions Page
+h3.head3 Class Details:
 div.displayTable
   for item in data
-    //- h3.head2 #{item.SUB_NAME}
-    //- h4.head3 Module Tutor:
-    //- p.para1 #{item.TUTOR}
     div.timeTable 
     table
       tr
         td
-          |     DATE: #{item.SUB_DATE}
+          |     Date:- #{item.SUB_DATE}
           br
-          |     SUBJECT: #{item.SUB_NAME} 
+          |     Subject:- #{item.SUB_NAME} 
           br
-          |     ROOM NO: #{item.ROOM_NO}
+          |     Room No:- #{item.ROOM_NO}
           br
-          |     TIME: #{item.TIME}
+          |     Time:- #{item.TIME}
           br
-          |     TUTOR: #{item.TUTOR}
+          |     Tutor: #{item.TUTOR}
           

@@ -4,12 +4,17 @@
 .head2{
     text-align: center;
     text-decoration: underline;
+    color: black;
+    width: 100%;
+    padding-left: 200px;
+    padding-bottom: 20px;
     font-size: x-large;
 }
 .head3{
     text-align: center;
     padding-top: 10px;
     font-size: x-large;
+    text-decoration: underline;
 }
 .para1{
     text-align: center;
@@ -26,14 +31,10 @@
   border:1px solid black;
   text-align: center;
   font-size: larger;
-  
 }
-
-
 .displayTable{
-    /* border: 1px solid; */
+    border: 1px solid;
     display: -webkit-inline-box;
-    padding-left: 300px;
 }
 .dropDown div{
     text-align-last: center;

@@ -17,7 +17,7 @@
  .dropDown div{
      text-align-last: center;
  }
- .start{
+ /* .start{
      padding-bottom: 25px;
      text-align: center;
  }
@@ -38,4 +38,19 @@
      background-color: white;
      border-radius: 10px;
      border-color: white;
- }
+ } */
+
+ .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    text-align: center;
+  }
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }

@@ -12,12 +12,10 @@ h1.head1 UNIVERSITY ROUTE MAP
     label(for='choosePage') Choose A Page: 
     select#choosePage(name='choosePage' onchange='location = this.value;')
       option(value='') Redirect To
-      option(value='./') Home Page
-      option(value='./intake/courseDetails') Intake Page
-      option(value='./courseDetails') Course Page
-      option(value='subjectPage') Subject Page
-      option(value='classDetailsPage') Class Details Page
-      option(value='./getDirections') Get Directions Page
+      option(value='/') Home Page
+      option(value='/intake') Intake Page
+      option(value='/courseDetails') Course Page
+      option(value='/getDirections') Get Directions Page
 .images
   .row
     .column

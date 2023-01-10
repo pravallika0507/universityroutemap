@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Get the functions in the db.js file to use
 const db = require('./services/db');
 
+
 // Create a route for root - /
 
 app.get("/", function(req, res) {
@@ -41,7 +42,7 @@ app.get("/intake", function(req,res) {
     sql = "SELECT * FROM INTAKE ";
     db.query(sql).then(resul =>{
         res.render("intake", {resul})
-    })
+    });
 });
 
 app.get("/courseDetails", function(req, res) {
@@ -87,7 +88,6 @@ app.get("/courseDetails/:C_ID/:SUB_ID", function(req, res) {
     var cdsql = "SELECT CD.SUB_ID, DATE_FORMAT(CD.SUB_DATE, '%y-%m-%d') AS SUB_DATE, CD.TIME, CD.ROOM_NO, CD.TUTOR, SD.C_ID, SD.SUB_NAME from CLASS_DETAILS AS CD \
     JOIN SUBJECTS AS SD on CD.SUB_ID = SD.SUB_ID \
     WHERE CD.SUB_ID = ?";
-    //var cdsql = "SELECT * FROM CLASS_DETAILS WHERE SUB_ID = ?";
     db.query(cdsql, [SID]).then(result => {
         console.log(result);
     //     output = ''
@@ -102,44 +102,8 @@ app.get("/courseDetails/:C_ID/:SUB_ID", function(req, res) {
     });
 });
 
-// app.get("/subjectDetails", function(req, res) {
-//     sql = "SELECT * FROM COURSES";
-//     db.query(sql).then(resul =>{
-//         console.log(resul);
-//         res.render("subjectDetails", {resul})
-//     })
-// });
-
 app.get("/getdirections", function(req, res) {
     res.render("getdirections");
-});
-
-// Create a route for testing the db
-app.get("/1", function(req, res) {
-    // Assumes a table called test_table exists in your database
-    sql = 'select * from INTAKE ';
-   
-    db.query(sql).then(results => {
-        console.log(results);
-        res.send(results)
-    });
-});
-
-// Create a route for /goodbye
-// Responds to a 'GET' request
-app.get("/goodbye", function(req, res) {
-    res.send("Goodbye world!");
-});
-
-// Create a dynamic route for /hello/<name>, where name is any value provided by user
-// At the end of the URL
-// Responds to a 'GET' request
-app.get("/hello/:name", function(req, res) {
-    // req.params contains any parameters in the request
-    // We can examine it in the console for debugging purposes
-    console.log(req.params);
-    //  Retrieve the 'name' parameter and use it in a dynamically generated page
-    res.send("Hello " + req.params.name);
 });
 
 // Start server on port 3000
