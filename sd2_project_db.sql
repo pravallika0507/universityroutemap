@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Jan 09, 2023 at 12:01 PM
+-- Generation Time: Jan 11, 2023 at 12:52 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sd2-project-db`
+-- Database: `sd2_project_db`
 --
 
 -- --------------------------------------------------------
